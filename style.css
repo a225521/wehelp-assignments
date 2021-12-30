@@ -1,0 +1,128 @@
+.frame {
+    display:flex;flex-wrap: wrap;/*讓項目水平排列跟可以換行 */
+}
+
+.p1 {
+    text-align: left;
+    font-size: 20px;
+    flex:none;
+    
+}
+
+.p2 {
+    display: flex;
+    justify-content: flex-end; /*讓項目靠右 */
+    flex:auto; /*自動填滿空間*/
+}
+
+.p3 {
+    font-size: 20px;
+    flex:none;
+    width:60px;
+    text-align: center;
+}
+.p4{
+    font-size: 20px;
+    flex:none;
+    width:60px;
+    text-align: center;
+}
+ul{
+    display: none;
+}
+label{
+    display: none;
+}
+#burger{
+    display: none;
+}
+
+
+
+@media (max-width:1200px){
+    .frame>.p3{
+        width:45%;
+    }
+}
+
+@media (max-width:500px){
+    .frame>.p3{
+        width:90%;
+    }
+}
+
+@media (max-width:600px){
+    .p3{
+        display: none;
+        }
+    ul{
+        display: none;
+        }
+    label{
+        display: block;
+        }
+    #burger:checked + ul{
+        display:block;
+      }
+    }
+
+
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center; /*垂直對齊*/
+    height: 300px;
+    background-color: rgb(184, 221, 241);
+}
+
+.h3 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.container {
+    width: 1200px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.wrap {
+    display: inline-block;
+    width: 250px;
+    padding:20px;
+    margin-left:0;
+    vertical-align: top;
+    justify-content: center;
+}
+
+.item1 {
+    background-color: rgb(185, 218, 248);
+    width: 250px;
+    margin-top: -4.5px;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 0;
+    
+}
+/* 手機板排版*/
+@media screen and (max-width:600px){
+    .container {width:100%;text-align: center;}
+    .back {width:100%;text-align: center;}
+}
+
+@media (max-width:500px){
+    .container {width:100%;text-align: center;}
+    .back {width:100%;text-align: center;}
+    .wrap {width:100%;text-align: center;}
+    }
+
+@media screen and (max-width:1200px){
+    .container {width:100%;text-align: center;}
+    .back {width:100%;text-align: center;}
+}
+
+
+
+
