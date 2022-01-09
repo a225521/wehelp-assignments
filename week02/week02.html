@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <title>week2-assignment</title>
+    <script type="text/javascript">
+        //1.函式與流程控制
+        function calculate(min, max) {
+            var sum = 0;
+            var n = min;
+            while (n <= max) {
+                sum += n;
+                n++;
+            }
+            alert(sum);
+        }
+        calculate(1, 3);
+        calculate(4, 8);
+
+        //2. JavaScript 物件與陣列
+        function avg(data) {
+            var len = data.count
+            var employees = data.employees;
+            var sum = 0;
+            for (var i = 0; i < employees.length; i++) {
+                sum = sum + employees[i].salary;
+            }
+            alert(sum / len);
+        }
+        avg({
+            "count": 3,
+            "employees": [
+                {
+                    "name": "John",
+                    "salary": 30000
+                },
+                {
+                    "name": "Bob",
+                    "salary": 60000
+                },
+                {
+                    "name": "Jenny",
+                    "salary": 50000
+                }
+            ]
+        });
+
+        //3.演算法
+        function maxProduct(nums) {
+            let result = nums[0] * nums[1];
+            for (let i = 0; i < nums.length; i++) {
+                for (let j = i + 1; j < nums.length; j++) {
+                    temp = nums[i] * nums[j]
+                    if (result < temp) {
+                        result = temp;
+                    }
+                }
+            }
+            alert(result);
+        }
+
+        maxProduct([5, 20, 2, 6])
+        maxProduct([10, -20, 0, 3])
+        maxProduct([-1, 2])
+        maxProduct([-1, 0, 2])
+        maxProduct([-1, -2, 0])
+
+        //4.演算法英文版
+        function twoSum(nums, target) {
+            var map = {};
+            for (var i = 0; i < nums.length; i++) {
+                var v = nums[i];
+
+                for (var j = i + 1; j < nums.length; j++) {
+                    if (nums[i] + nums[j] == target) {
+                        return [i, j];
+                    }
+                }
+            }
+        };
+        let result = twoSum([2, 11, 7, 15], 9);
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
