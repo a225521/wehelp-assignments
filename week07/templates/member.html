@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>會員頁面</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <div class="title">
+            <div class="h1">歡迎光臨，這是會員頁</div>
+    </header>
+    <!--header-end-->
+    <!--content-->
+    <div class="login">{{name}}，歡迎登入系統</div>
+    <div class="logout">
+        <a href="http://127.0.0.1:3000/signout">登出系統</a>
+    </div>
+    <div class="member">查詢會員姓名</div>
+    <br>
+    <div class="form">
+        <input id="search" type="text" name="username">
+        <button id="btn">查詢</button>
+        <div id="who"></div>
+    </div>
+    <script>
+        let btn=document.getElementById("btn");
+        btn.addEventListener("click", function(){
+            let search=document.getElementById("search");
+            let input=document.querySelector("input").value;
+            let src="http://127.0.0.1:3000/api/members?username="+input
+            fetch(src).then(function(response){
+                return response.json();
+            }).then(function(result){
+                if(result.data==null){
+                    document.getElementById("who").innerHTML="查無此人"
+                }else {
+                    document.getElementById("who").innerHTML=result.data["name"];
+                };
+            });
+        });
+    </script>
+</body>
+</html>
